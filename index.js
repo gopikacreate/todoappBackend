@@ -7,19 +7,9 @@ require('dotenv').config();
 const app = express();
 const port = 5000;
 
-
-// CORS Configuration
-const corsOptions = {
-  origin: 'https://todoapp-eight-neon.vercel.app', 
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type',
-};
-
 // Middleware
-app.use(cors(corsOptions)); 
+app.use(cors());
 app.use(bodyParser.json()); 
-// app.use(cors());
-// app.use(bodyParser.json()); 
 
 // PostgreSQL connection
 const pool = new Pool({
